@@ -1,0 +1,677 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+:root {
+    --grade9Color: rgb(89, 77, 72);
+    --grade10Color: rgb(72, 89, 81);
+    --grade11Color: rgb(89, 72, 81);
+    --grade12Color: rgb(72, 88, 89);
+    --slideDownDistance: 0px;
+}
+
+*::-webkit-scrollbar {
+    background-color: rgba(0,0,0,0);
+    width: 0.7vw;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10000px;
+}
+
+select {
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    background-color: rgb(50,50,60);
+    overflow: hidden;
+    margin: 0;
+}
+
+* {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+#title {
+    color: white;
+    font-family: 'Kalam', cursive;
+    width: 100vw;
+    text-align: center;
+    font-size: 6vh;
+    height: 6vh;
+    margin: 0;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+}
+
+#infoHolder {
+    margin: 0;
+    margin-left: 20vw;
+    width: 60vw;
+    height: 80vh;
+    background-color: rgb(20,20,20);
+    border-radius: 2vh;
+    background-color: var(--grade9Color);
+    transition: background 0.2s cubic-bezier(0,.46,.64,.98);
+}
+
+#gradesHolder {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+#gradesHolder > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0,.46,.64,.98);
+}
+
+#gradesHolder > div:hover {
+    transform: scale(1.05);
+}
+
+#gradesHolder > div:nth-Child(1) {
+    background-color: var(--grade9Color);
+    border-top-left-radius: 2vh;
+    border-top-right-radius: 2vh;
+    height: calc(100% + 2vh);
+    margin-top: -2vh;
+}
+
+#gradesHolder > div:nth-child(1) p {
+    font-size: 2.3rem;
+}
+
+#gradesHolder > div:nth-Child(2) {
+    background-color: var(--grade10Color);
+}
+
+#gradesHolder > div:nth-Child(3) {
+    background-color: var(--grade11Color);
+}
+
+#gradesHolder > div:nth-Child(4) {
+    background-color: var(--grade12Color);
+    border-top-right-radius: 2vh;
+}
+
+#gradesHolder > div p {
+    color: rgb(200,200,200);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.7rem;
+    margin: 0;
+    transition: all 0.2s cubic-bezier(0,.46,.64,.98);
+}
+
+#columnNames {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 1%;
+    padding-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.individualColumnName {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vr {
+    height: 90%;
+    background-color: white;
+    width: 1.5px;
+    border: 0;
+    border-radius: 0.5px;
+}
+
+.individualColumnName > p {
+    color: white;
+    font-size: 1.7rem;
+    text-align: left;
+}
+
+#column1 {
+    width: 43%;
+}
+
+#column2 {
+    width: 16%;
+}
+
+#column3 {
+    width: 18%;
+}
+
+#column4 {
+    width: 14%;
+}
+
+#classesHolder {
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+}
+
+.classHolder {
+    position: relative;
+    height: 14.857142%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    padding-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.addClassHolder {
+    height: 14.857142%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    padding-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.classHolder *:focus {
+    outline: none;
+}
+
+.addClassP {
+    margin: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-family: 'Kalam', cursive;
+}
+
+.className {
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.7rem;
+    width: 46%;
+    text-align: center;
+}
+
+.classNumber {
+    color: white;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.7rem;
+    width: 15%;
+    text-align: center;
+}
+
+.weight {
+    background-color: transparent;
+    border: 0;
+    font-size: 1.7rem;
+    color: white;
+    width: 15%;
+    text-align: center;
+}
+
+.classSeparator {
+    width: 90%;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(var(--slideDownDistance));
+    }
+}
+
+@keyframes slideDownAndFade {
+    from {
+        transform: translateY(0);
+        opacity: 1
+    }
+    to {
+        transform: translateY(var(--slideDownDistance));
+        opacity: 0;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes rotate180 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotateN180 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-180deg);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        left: 100vw;
+    }
+    to {
+        left: 81vw;
+    }
+}
+
+@keyframes slideToRight {
+    from {
+        left: 81vw;
+    }
+    to {
+        left: 100vw;
+    }
+}
+
+.grow {
+    animation: grow 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.shrink {
+    animation: shrink 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+.rotate180 {
+    animation: rotate180 700ms cubic-bezier(.35,-0.61,.67,1.5);
+}
+
+.rotateN180 {
+    animation: rotateN180 700ms cubic-bezier(.35,-0.61,.67,1.5);
+}
+
+.slideFromRight {
+    animation: slideFromRight 700ms cubic-bezier(.35,-0.61,.67,1.5) forwards;
+}
+
+.slideToRight {
+    animation: slideToRight 700ms cubic-bezier(.35,-0.61,.67,1.5) forwards;
+}
+
+#gradeButtonsHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: rgba(50,50,50,0.4);
+}
+
+#gradeButtonsHolder > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    height: 100%;
+}
+
+#gradeButtonsHolder > div:nth-child(1) {
+    justify-content: left;
+    box-sizing: border-box;
+    padding-left: 2%;
+}
+
+#moreInfoButton {
+    width: 50%;
+    height: 60%;
+    border-radius: 1vh;
+    border: 1px solid rgb(100,100,100);
+    font-size: 1.3rem;
+    background-color: var(--grade9Color);
+    transition: background 0.2s cubic-bezier(0,.46,.64,.98);
+    font-family: 'Nunito Sans', sans-serif;
+    color: white;
+}
+
+#calculateButton {
+    width: 50%;
+    height: 60%;
+    border-radius: 1vh;
+    border: 2px solid rgb(22, 28, 79);
+    background-color: rgb(200,200,200);
+    transition: background 0.2s cubic-bezier(0,.46,.64,.98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#calculateButton p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(22, 28, 79);
+    margin: 0;
+    margin-bottom: -1%;
+    cursor: pointer;
+}
+
+#gradeButtonsHolder > div:nth-child(3) > div {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--grade9Color);
+    border-radius: 1vh;
+    box-sizing: border-box;
+    padding-left: 5%;
+    transition: background 0.2s cubic-bezier(0,.46,.64,.98);
+    border: 1px solid rgb(100,100,100);
+}
+
+#gradeButtonsHolder > div:nth-child(3) p {
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Nunito Sans', sans-serif;
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+}
+
+#gradeButtonsHolder > div:nth-child(3) p:nth-child(2) {
+    margin-left: 3%;
+}
+
+.titlesSeparator {
+    width: 95%;
+    margin: 0;
+    margin-left: 2.5%;
+    border: 1px solid rgb(200,200,200);
+    border-radius: 0.75px;
+}
+
+.discardedDiv {
+    position: absolute;
+    left: 2.5vw;
+    top: 35vh;
+    width: 15vw;
+    height: 30vh;
+    background-color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 1%;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.discardedP {
+    text-align: center;
+    color: black;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.xButtons {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 2%;
+    background-color: rgba(0,0,0,0);
+    border-radius: 50px;
+    border: 0px;
+    font-weight: 700;
+    color: rgb(220,220,220);
+    text-align: center;
+    height:20px;
+    width:20px;
+    transition: 0.2s background ease-out, 0.2s transform ease-out;
+}
+
+.xButtons:hover {
+    background-color: rgba(0,0,0,0.5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.moreInfoDiv {
+    position: absolute;
+    height: 60vh;
+    width: 18vw;
+    left: 1vw;
+    top: 20vh;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 1vw;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.7%;
+}
+
+.moreInfoDiv > p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.moreInfoDiv > p:nth-child(even) {
+    margin-bottom: 5%;
+}
+
+#infoButton {
+    position: absolute;
+    left: 1vw;
+    top: 1vw;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 100vw;
+    background-color: transparent;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#infoButton > p {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    font-size: 1.9rem;
+    transform: translateY(-7%);
+}
+
+.howToDiv {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    height: 90vh;
+    width: 90vw;
+    border-radius: 1vw;
+    border: 10px solid black;
+    background-color: rgba(0,0,0,0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.howToTitle {
+    margin: 0;
+    font-size: 4rem;
+    color: white;
+    font-family: 'Kalam', cursive;
+}
+
+.howToDiv1 {
+    width: 100%;
+    height: 70%;
+    display: flex;
+}
+
+.howToDiv1x1 {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+
+.howToDiv1x2 {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+
+.howToUseTitle {
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+    margin-left: 2%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.howToUseText {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.howToUseText a{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+.howToDiv2 {
+    width: 100%;
+    height: calc(30% - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 3%;
+}
+
+.howToPrivacyText {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+#settingsButton {
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 100vw;
+    background-color: transparent;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#settingsButton > i {
+    color: white;
+    font-size: 2rem;
+}
+
+.settingsDiv {
+    position: absolute;
+    left: 100vw;
+    top: 12vh;
+    height: 80vh;
+    width: 18vw;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.settingsDiv > h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+}
+
+.settingsDiv p { 
+    
+}
+
+#display45Scale {
+    color: white;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    </style>
+    <title>GPA Calculator</title>
+</head>
+<body>
+
+    <h1 id = 'title'>Burrillville GPA Calculator</h1>
+
+        <div id = 'infoHolder'>
+            <div id = 'gradesHolder'>
+                <div>
+                    <p>Grade 9</p>
+                </div>
+                <div>
+                    <p>Grade 10</p>
+                </div>
+                <div>
+                    <p>Grade 11</p>
+                </div>
+                <div>
+                    <p>Grade 12</p>
+                </div>
+            </div>
+            <div id = 'columnNames'>
+                <div class = 'individualColumnName' id = 'column1'>
+                    <p>Class Name</p>
+                </div>
+                <div class = 'vr'></div>
+                <div class = 'individualColumnName' id = 'column2'>
+                    <p>Weight</p>
+                </div>
+                <div class = 'vr'></div>
+                <div class = 'individualColumnName' id = 'column3'>
+                    <p>Grade (%)</p>
+                </div>
+                <div class = 'vr'></div>
+                <div class = 'individualColumnName' id = 'column4'>
+                    <p>Credits</p>
+                </div>
+            </div>
+            <hr class = 'titlesSeparator'>
+            <div id = 'classesHolder'>
+
+            </div>
+            <div id = 'gradeButtonsHolder'>
+                <div>
+                    <button id = 'moreInfoButton' onclick = 'moreInfo()'>More Info</button>
+                </div>
+                <div>
+                    <div id = 'calculateButton' onclick = 'calculate()'>
+                        <p>Calculate!</p>
+                    </div>
+                </div>
+                <div>
+                    <div id = 'holder45Scale'>
+                        <p>4.5 Scale:</p>
+                        <p id = 'display45Scale'></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = 'moreInfoDiv'>
+            <p>4.0 Scale:</p>
+            <p id = 'display40Scale'></p>
+
+            <p>Total Credits:</p>
+            <p id = 'totalCreditNumber'></p>
+        </div>
+
+        <div id = 'infoButton' onclick = 'howTo()'>
+            <p>i</p>
+        </div>
+
+        <div id = 'settingsButton' onclick = 'settings()'>
+            <i class="fas fa-cog"></i>
+        </div>
+
+        <div class = 'settingsDiv'>
+            <h1>Settings</h1>
+            <div>
+                <p>Disable local storage</p>
+            </div>
+        </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
